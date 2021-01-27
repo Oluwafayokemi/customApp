@@ -6,10 +6,10 @@
   "scripts": {
     "test": "ts-node node_modules/tape/bin/tape tests/**/*.ts",
     "build": "tsc -p .",
-    "dev": "ts-node src/server.ts",
+    "dev-server": "ts-node src/server.ts",
+    "dev-client": "nodemon client/server.js",
     "watch-ts": "tsc -w",
-    "start-server": "ts-node dist/server.js",
-    "start-client": "node client/server.js"
+    "start-server": "ts-node dist/server.js"
   },
   "author": "Fayokemi Adeyina",
   "license": "ISC",
