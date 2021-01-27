@@ -15,16 +15,19 @@ class UserModel {
   async addUser(user: User) {
     try {
       const db = await Db()
-      const result = db.run(
+      const result = await db.run(
         'INSERT INTO user VALUES ($name)',
         {
           $name: user.name
         }
       )
-      return "user created"
+      return {
+        message: "user created",
+        data: result.lastID
+      }
     }
     catch (err) {
-      console.log(err)
+      throw Error(err)
     }
   }
 }
