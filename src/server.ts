@@ -25,10 +25,15 @@ app.post('/', (req: any, res: any) => {
 })
 
 app.post("/user", async (req: any, res: any) => {
-  const newUser = req.body;
-  // Add the new task from the post route.
-  const userRes = await userModel.addUser(newUser)
-  return res.json(userRes)
+  try {
+    const newUser = req.body;
+    // Add the new task from the post route.
+    const userRes = await userModel.addUser(newUser)
+    return res.json(userRes)
+  }
+  catch (err) {
+   return res.status(500).json("something went wrong")
+  }
 
 });
 

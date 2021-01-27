@@ -1,8 +1,8 @@
 ## Simple Web App component
 - To run node server development environment.
-run `npm run dev-server`
+run `npm run start-server`
 - To run client development server
-run `npm run dev-client`
+run `npm run start-client`
 - To test
 run `npm test`
 - To build
