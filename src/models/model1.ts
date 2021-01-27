@@ -14,6 +14,9 @@ class UserModel {
 
   async addUser(user: User) {
     try {
+      if (!user.name) {
+        return { error: true, message: 'You need a username' }
+      }
       const db = await Db()
       const result = await db.run(
         'INSERT INTO user VALUES ($name)',
