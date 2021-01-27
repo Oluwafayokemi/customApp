@@ -3,7 +3,7 @@ import request from 'supertest'
 import app from '../src/server'
 
 tape('POST /user', (assert) => {
-  const user = { name: 'New Thing' };
+  const user = { name: 'Fayokemi' };
   request(app)
     .post('/user')
     .expect(200)
